@@ -78,7 +78,7 @@ const deleteReview = async (req, res) => {
     params: { id: reviewId },
   } = req;
 
-  const review = await Review.findByIdAndRemove({
+  const review = await Review.findByIdAndDelete({
     _id: reviewId,
     createdBy: userId,
   });
