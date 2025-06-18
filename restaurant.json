@@ -1,0 +1,53 @@
+[
+    {
+      "name": "La Mandoline French Restaurant",
+      "description": "A charming French cafe offering authentic French cuisine with a cozy atmosphere reminiscent of Paris.",
+      "location": "17 Côte D'Ivoire St, Addis Ababa, Ethiopia"
+    },
+    {
+      "name": "Romina Restaurant",
+      "description": "A popular spot blending international and local cuisine, known for its inviting atmosphere and impeccable service.",
+      "location": "King George VI St, Addis Ababa, Ethiopia"
+    },
+    {
+      "name": "Aladdin Restaurant",
+      "description": "A Lebanese-inspired restaurant offering Middle Eastern cuisine with a cozy and atmospheric setting.",
+      "location": "XQRJ+CRV, Zimbabwe St, Addis Ababa, Ethiopia"
+    },
+    {
+      "name": "Yod Abyssinia Traditional Restaurant",
+      "description": "A must-visit destination offering authentic Ethiopian culture with traditional music, dancing, and cuisine.",
+      "location": "XQRV+F9F, Addis Ababa, Ethiopia"
+    },
+    {
+      "name": "Antica Bar & Restaurant",
+      "description": "An Italian restaurant specializing in pizza, BBQs, and pastas, offering a tranquil dining experience with outdoor seating.",
+      "location": "Cape Verde St, Addis Ababa, Ethiopia"
+    },
+    {
+      "name": "Moyos Cafe",
+      "description": "A European cafe known for its diverse menu, including chicken carbonara and farmer steak, with a clean and charming ambiance.",
+      "location": "Mickey Leland St, Addis Ababa, Ethiopia"
+    },
+    {
+      "name": "Marcus Addis",
+      "description": "A high-end restaurant offering a refined dining experience with a focus on quality and ambiance.",
+      "location": "Addis Ababa, Ethiopia"
+    },
+    {
+      "name": "Burger Shack",
+      "description": "An American-style diner serving big burgers with awesome sides, popular among locals for its quality and taste.",
+      "location": "Summit/CMC area, Addis Ababa, Ethiopia"
+    },
+    {
+      "name": "Delmala",
+      "description": "A brunch spot near Millennium Hall known for its chicken & waffles with house sauce and vibrant atmosphere.",
+      "location": "Near Millennium Hall, Addis Ababa, Ethiopia"
+    },
+    {
+      "name": "Bloom",
+      "description": "A restaurant near Atlas offering great wraps and sides, catering to both locals and foreigners.",
+      "location": "Near Atlas, Addis Ababa, Ethiopia"
+    }
+  ]
+  
