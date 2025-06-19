@@ -23,7 +23,9 @@ const errorHandlerMiddleware = require("./middleware/error-handler");
 const authenticateUser = require("./middleware/authentication");
 
 app.use(express.json());
+
 // extra packages
+app.set("trust proxy", 1);
 app.use(
   ratelimit({
     windowMs: 15 * 60 * 1000,
