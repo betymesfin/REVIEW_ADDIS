@@ -1,0 +1,225 @@
+openapi: 3.0.0
+info:
+  title: REVIEW_ADDIS API
+  version: 1.0.0
+servers:
+  - url: https://review-addis.onrender.com/api/v1
+    variables: {}
+paths:
+  /review:
+    get:
+      tags:
+        - Reviews
+      summary: Get all reviews
+      responses:
+        "200":
+          description: Success
+    post:
+      tags:
+        - Reviews
+      summary: Create a review
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateReviewRequest"
+            example:
+              restaurant: 685304fd5a2e4f92f97b9cbb
+              comment: Great!
+              type: dine-in
+              rating: "5"
+      responses:
+        "201":
+          description: Created
+  /review/{id}:
+    get:
+      tags:
+        - Reviews
+      summary: Get single review
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Review found
+        "404":
+          description: Review not found
+    patch:
+      tags:
+        - Reviews
+      summary: Update a review
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateReviewRequest"
+            example:
+              comment: Delivery took a while, but the food was great.
+              type: delivery
+              rating: 3
+      responses:
+        "200":
+          description: Updated
+    delete:
+      tags:
+        - Reviews
+      summary: Delete a review
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Deleted
+  /restaurant:
+    get:
+      tags:
+        - Restaurant
+      summary: Get all restaurants
+      responses:
+        "200":
+          description: Success
+      security: []
+  /restaurant/{id}:
+    get:
+      tags:
+        - Restaurant
+      summary: Get single restaurant
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Success
+      security: []
+  /auth/login:
+    post:
+      tags:
+        - Auth
+      summary: Login user
+      operationId: LoginUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginUserRequest"
+            example:
+              email: mama@gmail.com
+              password: shewareg
+      responses:
+        "200":
+          description: Logged in
+      security: []
+  /auth/register:
+    post:
+      tags:
+        - Auth
+      summary: Register user
+      operationId: RegisterUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RegisterUserRequest"
+            example:
+              name: elinatal
+              email: baby@gmail.com
+              password: timotios
+      responses:
+        "201":
+          description: Registered
+      security: []
+
+components:
+  schemas:
+    RegisterUserRequest:
+      title: RegisterUserRequest
+      required:
+        - name
+        - email
+        - password
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        name: bob
+        email: bob@gmail.com
+        password: secret
+    LoginUserRequest:
+      title: LoginUserRequest
+      required:
+        - email
+        - password
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        email: susan@gmail.com
+        password: secret
+    CreateReviewRequest:
+      title: CreateReviewRequest
+      required:
+        - restaurant
+        - comment
+      type: object
+      properties:
+        restaurant:
+          type: string
+        comment:
+          type: string
+      example:
+        restaurant: 685304fd5a2e4f92f97b9cbb
+        comment: loved it!
+    UpdateReviewRequest:
+      title: UpdateReviewRequest
+      required:
+        - comment
+        - rating
+      type: object
+      properties:
+        comment:
+          type: string
+        rating:
+          type: integer
+      example:
+        comment: great
+        rating: 5
+  securitySchemes:
+    httpBearer:
+      type: http
+      scheme: bearer
+security:
+  - httpBearer: []
+tags:
+  - name: Auth
+    description: ""
+  - name: Reviews
+    description: ""
+  - name: Restaurant
+    description: ""
