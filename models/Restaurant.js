@@ -24,6 +24,7 @@ const restaurantSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
+    images: [String],
   },
   { timestamps: true }
 );
