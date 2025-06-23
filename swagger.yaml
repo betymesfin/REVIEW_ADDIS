@@ -108,7 +108,6 @@ paths:
                   $ref: "#/components/schemas/Review"
         "404":
           description: Restaurant not found or no reviews
-      security: []
 
   /restaurant:
     get:

@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const { StatusCodes } = require("http-status-codes");
 const Review = require("../models/Reviews");
+const NotFoundError = require("../errors/not-found");
 
 const getAllReviews = async (req, res) => {
   const reviews = await Review.find({ createdBy: req.user.userId }).populate(
