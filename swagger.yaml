@@ -84,6 +84,32 @@ paths:
       responses:
         "204":
           description: Deleted
+
+  /review/restaurant/{restaurantId}:
+    get:
+      tags:
+        - Reviews
+      summary: Get all reviews for a specific restaurant
+      parameters:
+        - name: restaurantId
+          in: path
+          required: true
+          description: The ID of the restaurant
+          schema:
+            type: string
+      responses:
+        "200":
+          description: A list of reviews for the restaurant
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Review"
+        "404":
+          description: Restaurant not found or no reviews
+      security: []
+
   /restaurant:
     get:
       tags:
@@ -210,6 +236,25 @@ components:
       example:
         comment: great
         rating: 5
+    Review:
+      type: object
+      properties:
+        _id:
+          type: string
+        restaurant:
+          type: string
+        user:
+          type: string
+        comment:
+          type: string
+        rating:
+          type: number
+        type:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+
   securitySchemes:
     httpBearer:
       type: http
