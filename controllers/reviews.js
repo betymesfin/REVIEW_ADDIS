@@ -32,7 +32,7 @@ const getReviewByRestaurantId = async (req, res) => {
     params: { id: restaurantId },
   } = req;
 
-  const review = await Review.findOne({
+  const review = await Review.find({
     restaurant: restaurantId,
   });
 
