@@ -29,18 +29,16 @@ const getReview = async (req, res) => {
 
 const getReviewByRestaurantId = async (req, res) => {
   const {
-    user: { userId },
     params: { id: restaurantId },
   } = req;
 
   const review = await Review.findOne({
     restaurant: restaurantId,
-    createdBy: userId,
   });
 
   if (!review) {
     throw new NotFoundError(
-      `No review found for restaurant ID ${restaurantId} by user ${userId}`
+      `No review found for restaurant ID ${restaurantId}`
     );
   }
   res.status(StatusCodes.OK).json({ review });
