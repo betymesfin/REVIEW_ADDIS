@@ -36,11 +36,10 @@ const getReviewByRestaurantId = async (req, res) => {
     restaurant: restaurantId,
   }).populate("createdBy", "name");
 
-  if (!review) {
-    throw new NotFoundError(
-      `No review found for restaurant ID ${restaurantId}`
-    );
+  if (review.length === 0) {
+    return res.status(StatusCodes.OK).json({ review: [] });
   }
+
   res.status(StatusCodes.OK).json({ review });
 };
 
