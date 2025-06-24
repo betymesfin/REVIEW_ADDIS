@@ -33,7 +33,7 @@ const reviewSchema = new mongoose.Schema(
 );
 reviewSchema.index({ restaurant: 1, createdBy: 1 }, { unique: true });
 
-/** Static method to recalculate restaurant stats */
+
 reviewSchema.statics.calculateRestaurantStats = async function (restaurantId) {
   const stats = await this.aggregate([
     { $match: { restaurant: restaurantId } },
