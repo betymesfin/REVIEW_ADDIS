@@ -34,7 +34,7 @@ const getReviewByRestaurantId = async (req, res) => {
 
   const review = await Review.find({
     restaurant: restaurantId,
-  });
+  }).populate("createdBy", "name");
 
   if (!review) {
     throw new NotFoundError(
