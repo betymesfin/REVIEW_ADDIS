@@ -3,11 +3,24 @@ const { StatusCodes } = require("http-status-codes");
 const { BadRequestError, UnauthenticatedError } = require("../errors");
 
 const Register = async (req, res) => {
-  const user = await User.create({ ...req.body });
-  const token = user.createJWT();
-  res
-    .status(StatusCodes.CREATED)
-    .json({ user: { name: user.name, userId: user._id }, token });
+  try {
+    const user = await User.create({ ...req.body });
+    const token = user.createJWT();
+    res
+      .status(StatusCodes.CREATED)
+      .json({ user: { name: user.name, userId: user._id }, token });
+  } catch (err) {
+    if (err.code === 11000 && err.keyPattern?.email) {
+      return res
+        .status(StatusCodes.BAD_REQUEST)
+        .json({ message: "Email is already registered" });
+    }
+
+    console.error("Registration error:", err);
+    return res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .json({ message: "Something went wrong. Please try again." });
+  }
 };
 
 const Login = async (req, res) => {
