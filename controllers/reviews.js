@@ -34,7 +34,7 @@ const getReviewByRestaurantId = async (req, res) => {
 
   const review = await Review.find({
     restaurant: restaurantId,
-  });
+  }).populate("createdBy");
 
   if (review.length === 0) {
     return res.status(StatusCodes.OK).json({ review: [] });
