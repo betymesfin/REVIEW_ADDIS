@@ -34,37 +34,75 @@
     {
       "name": "Yod Abyssinia Traditional Restaurant",
       "description": "A must-visit destination offering authentic Ethiopian culture with traditional music, dancing, and cuisine.",
-      "location": "XQRV+F9F, Addis Ababa, Ethiopia"
+      "location": "XQRV+F9F, Addis Ababa, Ethiopia",
+      "images":[
+        "https://i.ibb.co/6cVvBQ66/2.jpg",
+        "https://i.ibb.co/DPDFWRXL/3.jpg",
+        "https://i.ibb.co/HTxf6yQp/4.jpg",
+        "https://i.ibb.co/1YtwM9ch/5.png"]
     },
     {
       "name": "Antica Bar & Restaurant",
       "description": "An Italian restaurant specializing in pizza, BBQs, and pastas, offering a tranquil dining experience with outdoor seating.",
-      "location": "Cape Verde St, Addis Ababa, Ethiopia"
+      "location": "Cape Verde St, Addis Ababa, Ethiopia",
+      "images":[
+        "https://i.ibb.co/6cVvBQ66/2.jpg",
+        "https://i.ibb.co/DPDFWRXL/3.jpg",
+        "https://i.ibb.co/HTxf6yQp/4.jpg",
+        "https://i.ibb.co/1YtwM9ch/5.png"
+      ]
     },
     {
       "name": "Moyos Cafe",
       "description": "A European cafe known for its diverse menu, including chicken carbonara and farmer steak, with a clean and charming ambiance.",
-      "location": "Mickey Leland St, Addis Ababa, Ethiopia"
+      "location": "Mickey Leland St, Addis Ababa, Ethiopia",
+      "images":[
+        "https://i.ibb.co/T6n8H4F/1.webp",
+        "https://i.ibb.co/LDFbNXNT/3.webp",
+        "https://i.ibb.co/JWVW1VC7/4.webp"
+      ]
     },
     {
       "name": "Marcus Addis",
       "description": "A high-end restaurant offering a refined dining experience with a focus on quality and ambiance.",
-      "location": "Addis Ababa, Ethiopia"
+      "location": "Addis Ababa, Ethiopia",
+      "images":[
+        "https://i.ibb.co/6cVvBQ66/2.jpg",
+        "https://i.ibb.co/DPDFWRXL/3.jpg",
+        "https://i.ibb.co/HTxf6yQp/4.jpg",
+        "https://i.ibb.co/1YtwM9ch/5.png",
+        "https://i.ibb.co/PvjNLMW9/romina1.jpg"
+      ]
     },
     {
       "name": "Burger Shack",
       "description": "An American-style diner serving big burgers with awesome sides, popular among locals for its quality and taste.",
-      "location": "Summit/CMC area, Addis Ababa, Ethiopia"
+      "location": "Summit/CMC area, Addis Ababa, Ethiopia",
+      "images":[
+        "https://i.ibb.co/T6n8H4F/1.webp",
+        "https://i.ibb.co/9kw358Mj/3.webp",
+        "https://i.ibb.co/nM3HMy2N/4.webp"
+      ]
     },
     {
       "name": "Delmala",
       "description": "A brunch spot near Millennium Hall known for its chicken & waffles with house sauce and vibrant atmosphere.",
-      "location": "Near Millennium Hall, Addis Ababa, Ethiopia"
+      "location": "Near Millennium Hall, Addis Ababa, Ethiopia",
+      "images":[
+      "https://i.ibb.co/4wqkJszX/2.webp",
+      "https://i.ibb.co/9kw358Mj/3.webp",
+      "https://i.ibb.co/nM3HMy2N/4.webp",
+      "https://i.ibb.co/0R54nrN1/unnamed.webp" ]
     },
     {
       "name": "Bloom",
       "description": "A restaurant near Atlas offering great wraps and sides, catering to both locals and foreigners.",
-      "location": "Near Atlas, Addis Ababa, Ethiopia"
+      "location": "Near Atlas, Addis Ababa, Ethiopia",
+      "images":[
+        "https://i.ibb.co/T6n8H4F/1.webp",
+        "https://i.ibb.co/LDFbNXNT/3.webp",
+        "https://i.ibb.co/JWVW1VC7/4.webp"
+      ]
     }
   ]
   

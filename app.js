@@ -36,6 +36,13 @@ app.use(helmet());
 app.use(cors());
 app.use(xss());
 
+app.use((req, res, next) => {
+  if (req.path === "/multiply") {
+    res.set("Content-Type", "application/json");
+  }
+  next();
+});
+
 app.get("/", (req, res) => {
   res.send('<h1>Reviews API</h1><a href="/api-docs">Documentation</a>');
 });
@@ -45,14 +52,27 @@ app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/restaurant", RestaurantRouter);
 app.use("/api/v1/review", authenticateUser, ReviewRouter);
 
+app.get("/multiply", (req, res) => {
+  const result = req.query.first * req.query.second;
+  if (result.isNaN) {
+    result = "NaN";
+  } else if (result == null) {
+    result = "null";
+  }
+  res.json({ result: result });
+});
+
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
 const port = process.env.PORT || 3000;
-
+let mongoURL = process.env.MONGO_URI;
+if (process.env.NODE_ENV == "test") {
+  mongoURL = process.env.MONGO_URI_TEST;
+}
 const start = async () => {
   try {
-    await connectDB(process.env.MONGO_URI);
+    await connectDB(mongoURL);
     app.listen(port, () =>
       console.log(`Server is listening on port ${port}...`)
     );
@@ -62,3 +82,4 @@ const start = async () => {
 };
 
 start();
+module.exports = { app };
